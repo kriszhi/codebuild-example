@@ -17,11 +17,11 @@ phases:
       - |    
                   if [ ${CODEBUILD_BUILD_SUCCEEDING}=1 ] ; then  
 
-                    aws sns publish --topic-arn codedeploy-test --message "Code Build TriggerSNS success value"; 
+                    aws sns publish --topic-arn arn:aws:sns:us-east-2:806103514809:codedeploy-test --message "Code Build TriggerSNS success value"; 
 
                   elif [ ${CODEBUILD_BUILD_SUCCEEDING}=0 ] ; then 
 
-                    aws sns publish --topic-arn codedeploy-test --message "Code Build TriggerSNS Failed value"; 
+                    aws sns publish --topic-arn arn:aws:sns:us-east-2:806103514809:codedeploy-test --message "Code Build TriggerSNS Failed value"; 
 
                   fi
 artifacts:
